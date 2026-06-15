@@ -1,0 +1,25 @@
+# Core ML
+torch>=2.0
+vllm>=0.7.0
+transformers
+sentence-transformers
+accelerate>=0.26.0
+
+# Data & Image
+pandas
+Pillow
+pydantic
+datasets
+
+# API
+openai
+cragmm-search-pipeline>=0.5.0
+
+# Utils
+loguru
+rich
+tqdm
+jinja2>=3.1.0
+tokenizers
+hf_transfer
+dotenv
