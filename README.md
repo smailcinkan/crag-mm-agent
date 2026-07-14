@@ -27,26 +27,43 @@
 
 ## 项目结构
 
-├── my_rag_agent.py          # 核心 Agent（继承 BaseAgent，包含全部五阶段优化）
+```
+.
+├── my_rag_agent.py              # 核心 Agent（继承 BaseAgent，五阶段优化）
 ├── agents/
-│   ├── base_agent.py        # CRAG-MM 官方 Agent 基类
-│   ├── rag_agent.py         # 官方 SimpleRAGAgent 参考实现
-│   └── user_config.py       # Agent 注册配置
-├── crag_batch_iterator.py   # 批处理迭代器
-├── crag_image_loader.py     # 图像加载器
-├── local_evaluation.py      # 本地评估脚本
-└── requirements.txt         # 依赖列表
-
-
+│   ├── base_agent.py            # CRAG-MM 官方 Agent 基类
+│   ├── rag_agent.py             # 官方 SimpleRAGAgent 参考实现
+│   ├── random_agent.py          # 随机 Agent 基线
+│   ├── vanilla_llama_vision_agent.py  # Llama Vision Agent
+│   └── user_config.py           # Agent 注册配置
+├── docs/                        # 赛题文档
+│   ├── dataset.md
+│   ├── baselines.md
+│   ├── submission.md
+│   └── search_api.md
+├── crag_batch_iterator.py       # 批处理迭代器
+├── crag_image_loader.py         # 图像加载器
+├── crag_web_result_fetcher.py   # Web 搜索结果获取
+├── local_evaluation.py          # 本地评估脚本
+├── utils.py                     # 工具函数
+├── Dockerfile                   # Docker 镜像配置
+├── docker_run.sh                # Docker 启动脚本
+├── requirements.txt             # 依赖列表
+└── aicrowd.json                 # AIcrowd 竞赛配置
+```
 
 ## 快速开始
 
 ```bash
 pip install -r requirements.txt
 python local_evaluation.py
-团队分工
+```
+
+## 团队分工
+
 三人合作项目，本仓库聚焦于 Agent 策略优化部分。完整项目使用算力云平台（AutoDL）租借 GPU 服务器运行。
 
-参考
-赛题：KDD CUP 2025 CRAG-MM Challenge
-框架：meta-comprehensive-rag-benchmark-starter-kit
+## 参考
+
+- 赛题：[KDD CUP 2025 CRAG-MM Challenge](https://www.aicrowd.com/challenges/meta-comprehensive-rag-benchmark-kdd-cup-2025)
+- 框架：[meta-comprehensive-rag-benchmark-starter-kit](https://github.com/facebookresearch/meta-comprehensive-rag-benchmark-starter-kit)
